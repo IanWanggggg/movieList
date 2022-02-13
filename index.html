@@ -1,92 +1,117 @@
-<!-- 導覽列 -->
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #272727">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="index.html" style="color:gray">My Cenemas</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active fw-bold" aria-current="page" href="index.html" style="color:gray">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold text-decoration-line-through" href="#" style="color:gray">Favorite</a>
-        </li>
-      </ul>
-      <!--       搜尋欄 -->
-      <form class="d-flex" id="search-form">
-        <input class="form-control me-2" type="search" placeholder="Movie title" aria-label="Search"
-          style="background-color: #4F4F4F; border: 0; color: #BEBEBE;" id="search-input">
-        <button class="btn" type="submit" style="background-color: #4F4F4F; color:lightgray;"
-          id="search-btn">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-<!-- 電影 -->
-<div class="container mt-5">
-  <div class="row" id="data-panel">
-    <!-- Render Movie List -->
-    <div class="col-sm-3">
-      <div class="mb-2">
-        <div class="card" style="background-color: #3C3C3C;">
-          <img
-            src="https://raw.githubusercontent.com/ALPHACamp/movie-list-api/master/public/posters/80PWnSTkygi3QWWmJ3hrAwqvLnO.jpg"
-            class="card-img-top" alt="Movie Poster" />
-          <div class="card-body">
-            <h5 class="card-title" style="color: lightgray">Movie title</h5>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-dark btn-show-movie" data-bs-toggle="modal" data-bs-target="#movie-modal">
-              More
-            </button>
-            <button class="btn btn-dark btn-add-favorite">+</button>
-          </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <!-- 導覽列 -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #272727">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html" style="color:gray">My Cenemas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active fw-bold" aria-current="page" href="index.html" style="color:gray">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-decoration-line-through" href="#" style="color:gray">Favorite</a>
+          </li>
+        </ul>
+        <!--       搜尋欄 -->
+        <form class="d-flex" id="search-form">
+          <input class="form-control me-2" type="search" placeholder="Movie title" aria-label="Search"
+            style="background-color: #4F4F4F; border: 0; color: #BEBEBE;" id="search-input">
+          <button class="btn" type="submit" style="background-color: #4F4F4F; color:lightgray;"
+            id="search-btn">Search</button>
+        </form>
       </div>
     </div>
-  </div>
-</div>
-<!-- 閱覽模式切換 -->
-<div class="container justify-content-end d-flex" id="viewModeChange">
-  <i class="fa fa-th"></i>
-  <i class="fa-solid fa-list ms-2"></i>
-</div>
-<!-- modal -->
-<div class="modal fade" id="movie-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="movie-modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" id="movie-modal-body">
-        <div class="row">
-          <div class="col-sm-8" id="movie-modal-image">
+  </nav>
+  <!-- 電影 -->
+  <div class="container mt-5">
+    <div class="row" id="data-panel">
+      <!-- Render Movie List -->
+      <div class="col-sm-3">
+        <div class="mb-2">
+          <div class="card" style="background-color: #3C3C3C;">
             <img
-              src="https://github.com/ALPHACamp/movie-list-api/blob/master/public/posters/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg?raw=true"
-              alt="movie-poster" class="img-fluid">
-          </div>
-          <div class="col-sm-4">
-            <p><em id="movie-modal-date">release date: 2020/01/05</em></p>
-            <p id="movie-modal-description">This is a movie.</p>
+              src="https://raw.githubusercontent.com/ALPHACamp/movie-list-api/master/public/posters/80PWnSTkygi3QWWmJ3hrAwqvLnO.jpg"
+              class="card-img-top" alt="Movie Poster" />
+            <div class="card-body">
+              <h5 class="card-title" style="color: lightgray">Movie title</h5>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-dark btn-show-movie" data-bs-toggle="modal" data-bs-target="#movie-modal">
+                More
+              </button>
+              <button class="btn btn-dark btn-add-favorite">+</button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
+    </div>
+  </div>
+  <!-- 閱覽模式切換 -->
+  <div class="container justify-content-end d-flex" id="viewModeChange">
+    <i class="fa fa-th"></i>
+    <i class="fa-solid fa-list ms-2"></i>
+  </div>
+  <!-- modal -->
+  <div class="modal fade" id="movie-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="movie-modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="movie-modal-body">
+          <div class="row">
+            <div class="col-sm-8" id="movie-modal-image">
+              <img
+                src="https://github.com/ALPHACamp/movie-list-api/blob/master/public/posters/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg?raw=true"
+                alt="movie-poster" class="img-fluid">
+            </div>
+            <div class="col-sm-4">
+              <p><em id="movie-modal-date">release date: 2020/01/05</em></p>
+              <p id="movie-modal-description">This is a movie.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!-- 分頁器 -->
-<nav aria-label="Page navigation" class="mt-5">
-  <ul class="pagination justify-content-center" id="paginator">
-    <li class="page-item"><a class="page-link" href="#"
-        style="background-color:#3C3C3C; border:gray; color:lightgray;">1</a></li>
-  </ul>
-</nav>
+  <!-- 分頁器 -->
+  <nav aria-label="Page navigation" class="mt-5">
+    <ul class="pagination justify-content-center" id="paginator">
+      <li class="page-item"><a class="page-link" href="#"
+          style="background-color:#3C3C3C; border:gray; color:lightgray;">1</a></li>
+    </ul>
+  </nav>
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- mian.js -->
+  <script src="main.js"></script>
+</body>
+
+</html>
